@@ -9,6 +9,7 @@ import org.springframework.http.codec.ServerCodecConfigurer;
 public class GatewayApplication {
 
     public static void main(String[] args) {
+        System.setProperty("reactor.netty.http.server.accessLogEnabled", "true");
         SpringApplication.run(GatewayApplication.class, args);
     }
 

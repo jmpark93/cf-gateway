@@ -1,16 +1,14 @@
 ---
 applications:
-  - name: Gateway
+  - name: cf-msa2-gateway
     memory: 1G
     instances: 1
     buildpacks:
-      - https://github.com/cloudfoundry/java-buildpack.git
-    path: ./build/libs/gateway-0.0.1.war
+      - java_buildpack
+    path: ./build/libs/gateway-0.0.1.jar
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+}}'
-      APP_NAME: 'gateway'
       SPRING_PROFILES_ACTIVE: dev
-      CONFIG_URL: 'http://config.private.kpaasta.kr/'
     routes:
-      - route: gateway.kpaasta.kr
-      - route: gateway.private.kpaasta.kr
+      - route: msa2-gateway.kpaasta.io
+      - route: msa2-gateway.cf.intl
