@@ -30,7 +30,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins: "http://localhost:8080"
+            allowed-origins: "*"
             allowed-methods: "*"
             allowed-headers: "*"
             allow-credentials: true
@@ -50,7 +50,7 @@ spring:
         - id: book
           uri: http://localhost:8083
           predicates:
-            - Path=/api/book/**
+            - Path=/api/books/**
 
 management:
   endpoints:
